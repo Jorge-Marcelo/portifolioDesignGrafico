@@ -1,0 +1,182 @@
+
+
+a {
+color: white;
+text-decoration: none;
+}
+
+a:hover {
+color: #FFF;
+transition: all 0.3s ease-in;
+}
+
+.Titulo1{
+margin-right: 20px;
+}
+
+
+
+/*Barra de Navegação*/
+header {
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-family: "Abel", sans-serif;
+font-size: 1.2em;
+width: 100%;
+border-bottom: 3px solid;
+border-color:rgb(255, 255, 255) ;
+position: fixed;
+z-index: 1000000000;
+background: #121f3a;
+margin-top: -10px;
+font-weight: 900;
+}
+
+nav ul li.itens-nav {
+position: relative;
+width: auto;
+margin: 0 10px 16px;
+text-align: center;
+}
+
+/*Configurações de tamanhos de texto e cores dos itens da lista  */
+nav ul li a {
+color: white;
+font-size: 1.2em;
+text-decoration: none;
+transition: 0.5s ease-in;
+margin-top: 10px;
+margin-left: 10px;
+}
+
+nav ul li a::after {
+width: 0%;
+opacity: 0;
+content: "";
+left: 0;
+bottom: 5;
+}
+
+nav ul li a:hover::after {
+display: block;
+margin: auto;
+content: "";
+bottom: 5px;
+height: 3px;
+border-radius: 10px;
+width: 100%;
+opacity: 1;
+background: linear-gradient(90deg, #0011ff, #00a2ff, #0011ff);
+transition: all 0.5s ease;
+cursor: pointer;
+}
+
+/*Configurações do efeito de  passar o mouse*/
+
+nav ul li a:hover {
+background: linear-gradient(90deg, #0011ff, #00a2ff, #0011ff);
+background-size: 400%;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+cursor: pointer;
+}
+
+#menu {
+display: flex;
+list-style: none;
+gap: 0.5rem;
+}
+
+#menu a {
+display: block;
+text-decoration: none;
+}
+
+#btn-mobile {
+display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*Media Queries Barra de Navegação*/
+@media (max-width: 240px) {
+#menu li a {
+font-size: 0.6em;
+}
+
+#btn-mobile {
+background-repeat: no-repeat;
+}
+#header {
+height: 50px;
+}
+
+#menu {
+position: absolute;
+right: 0px;
+}
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 1550px) {
+#menu {
+display: block;
+position: fixed;
+width: 100%;
+height: 100%;
+right: 0px;
+top: 30px;
+background-color: #000;
+transition: 0.6s;
+z-index: 1;
+transform: translateX(-100%);
+visibility: hidden;
+overflow: hidden;
+}
+
+nav ul li a {
+color: white;
+font-size: 1.3em;
+}
+
+#nav.active #menu {
+transform: translateX(0);
+height: 100%;
+visibility: visible;
+background-color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.9);
+overflow: hidden;
+margin-top: 30px;
+}
+
+nav ul li a:hover {
+color: rgb(255, 253, 253);
+
+transition: 0.6s ease-in;
+border-radius: 10px;
+}
+
+#btn-mobile {
+display: flex;
+padding: 20px;
+margin-left: 20px;
+margin-top: 20px;
+background: transparent;
+border: none;
+cursor: pointer;
+background-image: url("../img/nav/nav.png");
+background-repeat: no-repeat;
+}
+
+#nav.active #btn-mobile {
+display: flex;
+padding: 15px;
+background: transparent;
+border: none;
+cursor: pointer;
+background-image: url("../img/nav/close.png");
+background-repeat: no-repeat;
+}
+}
